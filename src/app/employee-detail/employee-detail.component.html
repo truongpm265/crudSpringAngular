@@ -1,0 +1,12 @@
+
+<div class="container">
+<h2 class="text-center">Employee Details</h2>
+
+<div *ngIf="employee">
+  <h3>NAME: {{ employee.name }}</h3>
+  <h4>EMAIL: {{ employee.email }}</h4>
+  <p>DOB: {{ employee.dob }}</p>
+  <p>GENDER: {{employee.gender}}</p>
+  <p>LOCATION: {{employee.location}}</p>
+</div>
+</div>

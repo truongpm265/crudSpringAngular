@@ -1,0 +1,96 @@
+<div class="col-md-8 offset-md-3">
+    <h3>Update employee</h3>
+    <form (ngSubmit)="onSubmit()">
+  
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="employee.name"
+          name="name"
+          #name="ngModel"
+          required
+          minlength="3"
+        />
+        <div *ngIf="name.invalid && name.touched" class="text-danger">
+          <small *ngIf="name.errors?.['required']">Name is required.</small>
+          <small *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</small>
+        </div>
+      </div>
+  
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          [(ngModel)]="employee.email"
+          name="email"
+          #email="ngModel"
+          required
+          email
+        />
+        <div *ngIf="email.invalid && email.touched" class="text-danger">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Invalid email address.</small>
+        </div>
+      </div>
+  
+      <!-- DOB -->
+      <div class="form-group">
+        <label for="dob">DOB: </label>
+        <input
+          type="date"
+          class="form-control"
+          id="dob"
+          [(ngModel)]="employee.dob"
+          name="dob"
+          #dob="ngModel"
+          required
+        />
+      </div>
+  
+      <!-- Gender -->
+      <div class="form-group">
+        <label for="gender">Gender: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="gender"
+          [(ngModel)]="employee.gender"
+          name="gender"
+          #gender="ngModel"
+          required
+        />
+        <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+          <small *ngIf="gender.errors?.['required']">Gender is required.</small>
+        </div>
+      </div>
+  
+      <!-- Location -->
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          [(ngModel)]="employee.location"
+          name="location"
+          #location="ngModel"
+          required
+        />
+        <div *ngIf="location.invalid && location.touched" class="text-danger">
+          <small *ngIf="location.errors?.['required']">Location is required.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-success mt-3" >
+        Submit
+      </button>
+    </form>
+  </div>
+  

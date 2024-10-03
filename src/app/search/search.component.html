@@ -1,0 +1,32 @@
+<form (ngSubmit)="searchEmployees()" class="form-inline">
+    <div class="row mb-3">
+      <div class="col-sm-2">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="searchRequest.name" name="name" />
+      </div>
+      <div class="col-sm-2">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" id="email" class="form-control" [(ngModel)]="searchRequest.email" name="email" />
+      </div>
+      <div class="col-sm-2">
+        <label for="gender" class="form-label">Gender:</label>
+        <input type="text" id="gender" class="form-control" [(ngModel)]="searchRequest.gender" name="gender" />
+      </div>
+      <div class="col-sm-2">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" class="form-control" [(ngModel)]="searchRequest.location" name="location" />
+      </div>
+      <div class="col-sm-2">
+        <label for="fromDate" class="form-label">From Date:</label>
+        <input type="date" id="fromDate" class="form-control" [(ngModel)]="searchRequest.fromDate" name="fromDate" />
+      </div>
+      <div class="col-sm-2">
+        <label for="toDate" class="form-label">To Date:</label>
+        <input type="date" id="toDate" class="form-control" [(ngModel)]="searchRequest.toDate" name="toDate" />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  
+  <app-list-employee [employees]="employees"></app-list-employee>
+  

@@ -1,0 +1,65 @@
+<div class="container d-flex justify-content-center">
+    <a 
+      class="btn btn-success" 
+      routerLinkActive="active" 
+      routerLink="/add-employee"
+    >
+      Add New Employee
+    </a>
+</div>
+
+<!-- <div class="container d-flex justify-content-center mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group">
+          <input 
+            [(ngModel)]="searchName" 
+            class="form-control" 
+            placeholder="Search by name"
+          >
+          <button 
+            class="btn btn-primary" 
+            (click)="searchEmployeesByName()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div> -->
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let employee of employees">
+            <td><a
+                [title]="employee.name + ' details'"
+                [routerLink]="['/detail', employee.id]">
+                {{ employee.name }}
+              </a></td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.dob}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.location}}</td>
+            <td>
+                <button (click)="updateEmployee(employee.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteEmployee(employee.id)" class="btn btn-danger m-1">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<!-- </div> -->
